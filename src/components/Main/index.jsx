@@ -6,6 +6,11 @@ const Main = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
+    if (todo.trim() === "") {
+      alert("Введите текст задачи!");
+      return;
+    }
+
     setTodos([...todos, { id: Date.now(), task: todo, completed: false }]);
   };
 
